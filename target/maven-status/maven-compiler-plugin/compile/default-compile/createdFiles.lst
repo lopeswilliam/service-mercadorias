@@ -1,0 +1,8 @@
+br\com\cadastro\services\ProdutoService.class
+br\com\cadastro\models\ProdutoRequest.class
+br\com\cadastro\BatchConfiguration.class
+br\com\cadastro\entity\Produto.class
+br\com\cadastro\ProdutoApplication.class
+br\com\cadastro\config\SwaggerConfig.class
+br\com\cadastro\controller\ProdutoController.class
+br\com\cadastro\repositories\ProdutoRepository.class
