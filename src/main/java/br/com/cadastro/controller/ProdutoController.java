@@ -36,7 +36,7 @@ public class ProdutoController {
 
 	@ApiOperation(value = "Inclui Produto")
 	@PostMapping(path = "/incluir" , produces = {"application/json"})
-	public ResponseEntity<Produto> inclusao(@RequestBody ProdutoRequest depositoRequest, @RequestParam("token") String token) {
+	public ResponseEntity<Produto> inclusao(@RequestBody ProdutoRequest depositoRequest, @RequestHeader("authorization") String authorization) {
 		logger.info("Iniciando a Inclusao do produtoService");
 		return produtoService.inclusao(depositoRequest );
 	}
@@ -44,21 +44,21 @@ public class ProdutoController {
 	
 	@ApiOperation(value = "Lista de Produtos")
 	@GetMapping(path = "/listarProdutos" , produces = {"application/json"})
-	public ResponseEntity<List<Produto>> consultaOrdens(@RequestParam("token") String token) {
+	public ResponseEntity<List<Produto>> consultaOrdens(@RequestHeader("authorization") String authorization) {
 		logger.info("Iniciando a consulta do produtoService");
 		return produtoService.consultarProdutos();
 	}
 	
 	@ApiOperation(value = "Atualizar Produto")
 	@PutMapping(path = "/alterar" , produces = {"application/json"})
-	public ResponseEntity<Produto> atualizar(@RequestBody ProdutoRequest depositoRequest, @RequestParam("token") String token) {
+	public ResponseEntity<Produto> atualizar(@RequestBody ProdutoRequest depositoRequest, @RequestHeader("authorization") String authorization) {
 		logger.info("Iniciando a Inclusao do produtoService");
 		return produtoService.atualizar(depositoRequest );
 	}
 	
 	@ApiOperation(value = "Produto")
 	@GetMapping(path = "/consultaByCodigoProduto" , produces = {"application/json"})
-	public ResponseEntity<List<Produto>> consultaByCodigoProduto(@RequestParam("codigo") String codigo, @RequestParam("token") String token) {
+	public ResponseEntity<List<Produto>> consultaByCodigoProduto(@RequestParam("codigo") String codigo, @RequestHeader("authorization") String authorization ) {
 		logger.info("Iniciando a consulta do produtoService");
 		return produtoService.consultaByCodigoProduto(codigo);
 	}
